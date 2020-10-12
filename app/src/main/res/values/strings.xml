@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Bharat Agri Assigment</string>
+    <string name="description_movie_poster">Contains poster of movie</string>
+    <string name="an_error_occured_while_loading_data">An error occurred while loading data.</string>
+
+    <string name="heading_release_date">Release</string>
+    <string name="genre_static">Genre</string>
+    <string name="heading_ratings">Ratings</string>
+
+    <string name="no_release_date_found">Release date not found</string>
+    <string name="no_summary_found">No summary was found</string>
+
+
+    <string name="view_top_rated">VIEW_TOP_RATED</string>
+    <string name="view_popular">VIEW_POPULAR</string>
+
+    <string name="share">Share</string>
+    <string name="text_overview">Overview</string>
+</resources>

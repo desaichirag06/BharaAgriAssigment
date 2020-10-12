@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/actionPopular"
+        android:icon="@drawable/ic_popular"
+        android:title="Popular"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/actionTopRated"
+        android:icon="@drawable/ic_top_rated"
+        android:title="Top Rated"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/actionSettings"
+        android:title="Settings" />
+</menu>

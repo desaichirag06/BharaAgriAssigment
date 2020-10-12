@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="movie"
+            type="com.chirag.bharaagriassigment.model.entities.MovieDetail" />
+
+        <variable
+            name="palette"
+            type="com.chirag.bharaagriassigment.model.entities.MoviePalette" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@{palette.color}">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/ivPoster"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:backDropUrl="@{movie.backdropPath}"
+                android:contentDescription="@string/description_movie_poster"
+                android:minHeight="250dp"
+                android:scaleType="fitXY"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="16dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ivPoster">
+
+                <TextView
+                    android:id="@+id/tvOriginalTitleStatic"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:fontFamily="@font/muli_semi_bold"
+                    android:text="@{movie.title}"
+                    android:textSize="22sp"
+                    app:layout_constraintEnd_toStartOf="@+id/tvVoteAverage"
+                    app:layout_constraintHorizontal_weight="0.3"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="Movie Title Name" />
+
+                <TextView
+                    android:id="@+id/tvVoteAverage"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:fontFamily="@font/muli_semi_bold"
+                    android:gravity="end"
+                    android:text="@{movie.getDetailedVoteAverage()}"
+                    android:textSize="22sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvOriginalTitleStatic"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_weight="0.1"
+                    app:layout_constraintStart_toEndOf="@+id/tvOriginalTitleStatic"
+                    app:layout_constraintTop_toTopOf="@+id/tvOriginalTitleStatic"
+                    tools:text="6.9/10" />
+
+                <TextView
+                    android:id="@+id/tvOverview"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:fontFamily="@font/muli"
+                    android:justificationMode="inter_word"
+                    android:text="@{movie.overview}"
+                    android:textSize="16sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/tvOriginalTitleStatic"
+                    app:layout_constraintTop_toBottomOf="@+id/tvOriginalTitleStatic"
+                    tools:targetApi="o"
+                    tools:text="This is the overview of the movie. It is a synopsis of the plot and provide an insight to the movie." />
+
+                <TextView
+                    android:id="@+id/tvReleaseDateStatic"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:fontFamily="@font/muli_semi_bold"
+                    android:text="@string/heading_release_date"
+                    android:textSize="18sp"
+                    app:layout_constraintEnd_toStartOf="@+id/tvReleaseDate"
+                    app:layout_constraintHorizontal_weight="0.1"
+                    app:layout_constraintStart_toStartOf="@+id/tvOverview"
+                    app:layout_constraintTop_toBottomOf="@+id/tvOverview" />
+
+                <TextView
+                    android:id="@+id/tvReleaseDate"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/muli"
+                    android:gravity="start"
+                    android:text="@{movie.getReleaseDate()}"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvReleaseDateStatic"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_weight="0.3"
+                    app:layout_constraintStart_toEndOf="@+id/tvReleaseDateStatic"
+                    app:layout_constraintTop_toTopOf="@+id/tvReleaseDateStatic"
+                    tools:text="11 October 2020" />
+
+                <TextView
+                    android:id="@+id/tvGenreStatic"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:fontFamily="@font/muli_semi_bold"
+                    android:text="@string/genre_static"
+                    android:textSize="18sp"
+                    app:layout_constraintEnd_toEndOf="@+id/tvReleaseDateStatic"
+                    app:layout_constraintHorizontal_weight="0.1"
+                    app:layout_constraintStart_toStartOf="@+id/tvReleaseDateStatic"
+                    app:layout_constraintTop_toBottomOf="@+id/tvReleaseDateStatic" />
+
+                <TextView
+                    android:id="@+id/tvGenre"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/muli"
+                    android:gravity="start"
+                    android:textSize="18sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_weight="0.3"
+                    app:layout_constraintStart_toEndOf="@+id/tvGenreStatic"
+                    app:layout_constraintTop_toTopOf="@+id/tvGenreStatic"
+                    tools:text="Action, Adventure, Fantasy" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>
