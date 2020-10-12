@@ -25,4 +25,4 @@ Shows the lists of Popular and Top Rated Movies along with their basic details a
 ![alt text](https://github.com/desaichirag06/BharaAgriAssigment/blob/master/images/Data%20Error.png)
 
 
-[![license](https://github.com/desaichirag06/BharaAgriAssigment/blob/master/LICENSE)
+![license](https://github.com/desaichirag06/BharaAgriAssigment/blob/master/LICENSE)
